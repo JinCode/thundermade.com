@@ -22,3 +22,4 @@ This is the company website for Thunder Made LLC. It is a static website built w
 - [ ] style the header in partials/header.html
 - [ ] style the footer in partials/footer.html
 - [ ] style the home page in layouts/index.html
+- [ ] style the products page in layouts/products/list.html

@@ -22,29 +22,39 @@
         <p>HOW WE OPERATE</p>
         <div class="col-md-4">
             <p>Think Fast</p>
+            <p>blah blah blah blah blah</p>
         </div>
         <div class="col-md-4">
             <p>Code Fast</p>
+            <p>blah blah blah blah blah</p>
         </div>
         <div class="col-md-4">
             <p>Fail Fast</p>
+            <p>blah blah blah blah blah</p>
         </div>
     </div>
-    <div class="row">
-        <p>Our Blog</p>
-        <div class="col-md-6">
-            <p>Blog 1</p>
+    <div class="container">
+        <div class="row">
+            {{ $pages := where .Site.RegularPages "Section" "blogs" }}
+            {{ $featured := where $pages "Params.featured" true }}
+            {{ $topFour := first 4 $featured }}
+<!--            {{ printf "All pages in blogs section: %#v" $pages }}-->
+<!--            {{ printf "Featured blogs: %#v" $featured }}-->
+<!--            {{ printf "Top four featured blogs: %#v" $topFour }}-->
+            {{ range $topFour }}
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="{{ with .Params.image }}{{ . | relURL }}{{ end }}" class="card-img-top" alt="{{ .Title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ .Title }}</h5>
+                        <p class="card-text">{{ .Params.description }}</p>
+                        <a href="{{ .RelPermalink }}" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+            <a type="button" class="btn btn-primary" href="blogs">See more</a>
         </div>
-        <div class="col-md-6">
-            <p>Blog 2</p>
-        </div>
-        <div class="col-md-6">
-            <p>Blog 3</p>
-        </div>
-        <div class="col-md-6">
-            <p>Blog 4</p>
-        </div>
-        <a type="button" class="btn btn-primary" href="blogs">See more</a>
     </div>
 </div>
 {{ end }}
