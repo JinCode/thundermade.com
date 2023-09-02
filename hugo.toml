@@ -1,0 +1,4 @@
+baseURL = 'https://thundermade.com/'
+languageCode = 'en-us'
+title = 'Thunder Made LLC'
+theme = 'thunder-made-theme'
