@@ -19,7 +19,11 @@ This is the company website for Thunder Made LLC. It is a static website built w
 2. Commit and push the changes to the master branch
 
 ### To Do
+- [ ] add all required images to static/images
 - [ ] style the header in partials/header.html
 - [ ] style the footer in partials/footer.html
-- [ ] style the home page in layouts/index.html
+- [ ] style the home page in layouts/_default/home.html
 - [ ] style the products page in layouts/products/list.html
+- [ ] style the blogs page in layouts/blogs/list.html
+- [ ] style the blog page in layouts/blogs/single.html
+- [ ] style the contact-us page in layouts/_default/contact-us.html

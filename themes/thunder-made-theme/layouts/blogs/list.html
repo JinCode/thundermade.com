@@ -1,21 +1,24 @@
 {{ define "main" }}
 <style>
-    .products-list-image {
+    .blog-list-image {
         width: 100px;
         height: auto;
     }
 </style>
-<h1>Our Products</h1>
-{{ $paginator := .Paginate (where .Data.Pages "Section" "products") }}
+<h1>Blog Posts</h1>
+
+{{ $paginator := .Paginate (where .Data.Pages "Section" "blogs") }}
 {{ range $paginator.Pages }}
 <div>
     <h2>{{ .Title }}</h2>
-    <img class="products-list-image" src="{{ .Params.image }}" alt="{{ .Title }}" />
-    <p>{{ .Params.description }}</p>
-    <a href="{{ .Params.link }}">Learn More</a>
+    <img class="blog-list-image" src="{{ .Params.image }}" alt="{{ .Title }}" />
+    <p>{{ .Description }}</p>
+    <p>{{ .Date.Format "Mon, Jan 2, 2006" }}</p>
+    <a href="{{ .RelPermalink }}">Read More</a>
 </div>
 {{ end }}
 
+<!-- Pagination Links -->
 <nav aria-label="Page navigation">
     <ul class="pagination">
         {{ if .Paginator.HasPrev }}

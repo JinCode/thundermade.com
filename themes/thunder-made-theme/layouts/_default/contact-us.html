@@ -1,0 +1,39 @@
+{{ define "main" }}
+<style>
+
+</style>
+<div>
+  <h1>Contact us</h1>
+  <!-- Contact Us Form -->
+  <div class="container">
+    <form action="/submit" method="post">
+      <!-- Name field -->
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+      </div>
+
+      <!-- Email field -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+
+      <!-- Message textarea -->
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      <!-- Not a robot checkbox -->
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="notRobot" required>
+        <label class="form-check-label" for="notRobot">I'm not a robot</label>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+{{ end }}
