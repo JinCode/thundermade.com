@@ -1,0 +1,25 @@
+.navbar-logo {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.navbar-brand {
+  padding-left: 20px; /* Add padding to the logo */
+}
+.navbar-nav {
+  margin-left: auto;
+  margin-right: auto; /* Center the buttons */
+}
+.navbar-button {
+  color: #fcfcfc;
+}
+.navbar-selected-button {
+  background-color: #f2f2f2;
+}
+
+.navbar-logo {
+  height: 50px; /* Set the width */
+  width: auto; /* Keep aspect ratio */
+  border-radius: 8px; /* Round corners */
+}
