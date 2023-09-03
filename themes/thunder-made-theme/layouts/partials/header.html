@@ -37,6 +37,9 @@
         font-weight: 500;
       }
 
+      .active {
+        background-color: #ddd;
+      }
     </style>
   </head>
   <body>
@@ -47,11 +50,10 @@
       </a>
       <!-- Buttons -->
       <div class="list">
-            <a class="nav link1" href="/">Home</a>
-            <a class="nav link2" href="/products">Products</a>
-            <a class="nav link3" href="/blogs">Blogs</a>
-            <a class="nav link4" href="/contact-us">Contact Us</a>
-        </ul>
+        <a class="nav link1 {{ if eq .RelPermalink "/" }}active{{ end }}" href="/">Home</a>
+        <a class="nav link2 {{ if eq .RelPermalink "/products/" }}active{{ end }}" href="/products">Products</a>
+        <a class="nav link3 {{ if eq .RelPermalink "/blogs/" }}active{{ end }}" href="/blogs">Blogs</a>
+        <a class="nav link4 {{ if eq .RelPermalink "/contact-us/" }}active{{ end }}" href="/contact-us">Contact Us</a>
       </div>
       <img class="search-icon" src="/images/searching.png" alt="search">
     </nav>
