@@ -1,6 +1,169 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-<div>
-    {{ .Content }}
+<style>
+  .blog-image {
+    height: 60vh;
+    width: 70vw;
+    background-color: rgba(252, 252, 252, 1);
+    margin: 2rem;
+    border-radius: 20px;
+  }
+
+  .single-blog {
+    background-color: rgba(240, 240, 240, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content {
+    width: 70vw;
+    text-align: center;
+  }
+
+  h1,
+  h2 {
+    font-family: "Impact";
+    font-weight: 500;
+    color: #fcfcfc;
+    -webkit-text-stroke-color: rgba(69, 172, 219, 1);
+    -webkit-text-stroke-width: 3px;
+    font-size: 64px;
+    padding: 32px 0 0 0;
+    text-align: center;
+  }
+
+  h1 img,
+  h2 img {
+    height: 44px;
+  }
+
+  h2 strong {
+    color: #fed154;
+    -webkit-text-stroke-width: 1px;
+  }
+  .blog-section {
+    width: 100%;
+    background-color: rgba(240, 240, 240, 1);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+  }
+
+  .blog {
+    display: flex;
+    background-color: rgba(252, 252, 252, 1);
+    box-shadow: 0 10px 12px rgba(228, 228, 228, 1);
+    margin: 1.5rem;
+    border-radius: 20px;
+    padding: 32px;
+  }
+
+  .blog img {
+    height: 200px;
+    width: 296px;
+    border-radius: 12px;
+    background-color: rgba(240, 240, 240, 1);
+  }
+
+  .blog .card-title,
+  .blog .readmore {
+    color: rgba(69, 172, 219, 1);
+  }
+
+  .seemore {
+    text-decoration: none;
+    border: 3px solid rgba(69, 172, 219, 1);
+    color: rgba(69, 172, 219, 1);
+    font-weight: 500;
+    border-radius: 12px;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+  }
+
+  .seemore img {
+    height: 16px;
+    margin-left: 10px;
+  }
+
+  .tags {
+    height: 30vh;
+  }
+
+  .tags h2 {
+    margin:2rem;
+  }
+
+  .tags a {
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    color: rgba(69, 172, 219, 1);
+    border: 3px solid rgba(69, 172, 219, 1);
+    border-radius: 50px;
+    padding: 16px 32px;
+    margin: 1rem 1rem 2rem 1rem;
+  }
+</style>
+<div class="single-blog">
+  <img class="blog-image" src="{{ .Params.image }}" alt="{{ .Title }}" />
+  <h1>
+    <img src="/images/light.png" alt="light" />{{ .Title }}<img
+      src="/images/light.png"
+      alt="light"
+    />
+  </h1>
+  <p class="date">"{{ .Date.Format "Mon, Jan 2, 2006" }}"</p>
+  <div class="content"><p>{{ .Content }}</p></div>
+  <div class="tags">
+    <h2>
+      <img src="/images/light.png" alt="light" />TAGS</strong
+      ><img src="/images/light.png" alt="light" />
+    </h2>
+    <a href="/">Lorem Ipsum</a>
+    <a href="/">Lorem Ipsum</a>
+    <a href="/">Lorem Ipsum</a>
+  </div>
+  <div class="blog-section">
+    <div class="container">
+      <h2>
+        <img src="/images/light.png" alt="light" />SIMILAR <strong>POSTS</strong
+        ><img src="/images/light.png" alt="light" />
+      </h2>
+      <div class="row">
+        {{ $pages := where .Site.RegularPages "Section" "blogs" }} {{ $featured
+        := where $pages "Params.featured" true }} {{ $topFour := first 4
+        $featured }}
+        <!--            {{ printf "All pages in blogs section: %#v" $pages }}-->
+        <!--            {{ printf "Featured blogs: %#v" $featured }}-->
+        <!--            {{ printf "Top four featured blogs: %#v" $topFour }}-->
+        {{ range $topFour }}
+        <div class="col-md-6">
+          <div class="blog">
+            <img
+              src="{{ with .Params.image }}{{ . | relURL }}{{ end }}"
+              class="card-img-top"
+              alt="{{ .Title }}"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ .Title }}</h5>
+              <p class="card-text">{{ .Params.description }}</p>
+              <a href="{{ .RelPermalink }}" class="readmore">Read More</a>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      <a type="button" class="seemore" href="blogs"
+        >SEE MORE <img src="/images/right-chevron.png" alt=""
+      /></a>
+    </div>
+  </div>
 </div>
+
 {{ end }}

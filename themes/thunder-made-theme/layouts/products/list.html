@@ -82,7 +82,28 @@
     justify-content: center;
   }
 
-  nav ul a {
+  li {
+    padding: 10px 10px 75px 10px;
+  }
+
+  .page-item.active .page-link {
+    background-color: rgba(240, 240, 240, 1);
+    color: #fed154;
+    font-style: italic;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: #fed154;
+    border: none;
+  }
+
+  .page-link,
+  .page-item.disabled .page-link {
+    font-size: 24px;
+    position: relative;
+    display: block;
+    color: rgba(69, 172, 219, 1);
+    text-decoration: none;
+    background-color: transparent;
     border: none;
   }
 </style>
