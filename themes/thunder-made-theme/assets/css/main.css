@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*body {*/
 /*  color: #222;*/
 /*  font-family: sans-serif;*/
@@ -20,8 +21,9 @@
 /*  color: #00e;*/
 /*  text-decoration: none;*/
 /*}*/
-
+=======
 @font-face {
-  font-family: "PoetsenOne"; /* You can name it anything */
-  src: url("/fonts/PoetsenOne-Regular.woff") format("truetype");
+    font-family: 'PoetsenOne'; /* You can name it anything */
+    src: url('/fonts/PoetsenOne-Regular.woff') format('truetype');
 }
+>>>>>>> 9fceea1fde8a6e6c02a5ef4a5321ef9403e9afa8
