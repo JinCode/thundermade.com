@@ -1,54 +1,155 @@
 {{ define "main" }}
 <style>
-    .products-list-image {
-        width: 100px;
-        height: auto;
-    }
+  h1 {
+    font-family: "Impact";
+    font-weight: 500;
+    color: #fcfcfc;
+    -webkit-text-stroke-color: rgba(69, 172, 219, 1);
+    -webkit-text-stroke-width: 3px;
+    font-size: 64px;
+    padding: 32px 0;
+    text-align: center;
+  }
+
+  h1 img {
+    height: 44px;
+  }
+
+  h1 strong {
+    color: #fed154;
+    -webkit-text-stroke-width: 1px;
+  }
+
+  .products,
+  h1,
+  nav {
+    background-color: rgba(240, 240, 240, 1);
+    margin: 0;
+  }
+
+  .products .products-list-image {
+    height: 38vh;
+    background-color: rgb(252, 252, 252, 1);
+    box-shadow: 0 10px 12px rgba(228, 228, 228, 1);
+    border-radius: 12px;
+  }
+
+  .products {
+    display: flex;
+    padding: 32px 32px 128px 15vw;
+  }
+
+  .product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 3rem;
+  }
+
+  .consoles img {
+    padding: 10px;
+  }
+
+  .product-details h2 {
+    color: rgba(69, 172, 219, 1);
+    font-size: 24px;
+    line-height: 28.8px;
+  }
+
+  .official {
+    border: 3px solid rgba(69, 172, 219, 1);
+    border-radius: 12px;
+    padding: 16px 32px;
+    text-decoration: none;
+    color: rgba(69, 172, 219, 1);
+    margin-right: 1rem;
+    font-weight: 500;
+  }
+
+  .share-products {
+    color: rgba(69, 172, 219, 1);
+    margin-left: 1rem;
+    font-weight: 500;
+  }
+
+  .official img {
+    height: 16px;
+    margin-left: 5px;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  nav ul a {
+    border: none;
+  }
 </style>
-<h1>Our Products</h1>
-{{ $paginator := .Paginate (where .Data.Pages "Section" "products") }}
-{{ range $paginator.Pages }}
-<div>
-    <h2>{{ .Title }}</h2>
-    <img class="products-list-image" src="{{ .Params.image }}" alt="{{ .Title }}" />
-    <p>{{ .Params.description }}</p>
-    <a href="{{ .Params.link }}">Learn More</a>
+<h1>
+  <img src="/images/light.png" alt="light" />OUR <strong>PRODUCTS</strong
+  ><img src="/images/light.png" alt="light" />
+</h1>
+{{ $paginator := .Paginate (where .Data.Pages "Section" "products") }} {{ range
+$paginator.Pages }}
+<div class="products">
+  <img
+    class="products-list-image"
+    src="{{ .Params.image }}"
+    alt="{{ .Title }}"
+  />
+  <div class="product-details">
+    <div class="details">
+      <div class="consoles">
+        <img src="/images/windows.png" alt="windows" />
+        <img src="/images/xbox.png" alt="xbox" />
+        <img src="/images/playstation.png" alt="" />
+      </div>
+      <h2>{{ .Title }}</h2>
+      <p>{{ .Params.description }}</p>
+    </div>
+    <div class="buttons">
+      <a class="official" href="{{ .Params.link }}">OFFICIAL WEBSITE</a>
+      <a class="share-products" href="/">SHARE PRODUCT</a>
+    </div>
+  </div>
 </div>
 {{ end }}
 
 <nav aria-label="Page navigation">
-    <ul class="pagination">
-        {{ if .Paginator.HasPrev }}
-        <li class="page-item">
-            <a class="page-link" href="{{ .Paginator.Prev.URL }}" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        {{ else }}
-        <li class="page-item disabled">
-            <span class="page-link">&laquo;</span>
-        </li>
-        {{ end }}
-
-        {{ $paginator := .Paginator }}
-        {{ range $index, $page := $paginator.Pagers }}
-        <li class="page-item{{ if eq $paginator.PageNumber (add $index 1)}} active{{ end }}">
-            <a class="page-link" href="{{ $page.URL }}">{{ add $index 1 }}</a>
-        </li>
-        {{ end }}
-
-        {{ if .Paginator.HasNext }}
-        <li class="page-item">
-            <a class="page-link" href="{{ .Paginator.Next.URL }}" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
-        {{ else }}
-        <li class="page-item disabled">
-            <span class="page-link">&raquo;</span>
-        </li>
-        {{ end }}
-    </ul>
+  <ul class="pagination">
+    {{ if .Paginator.HasPrev }}
+    <li class="page-item">
+      <a
+        class="page-link"
+        href="{{ .Paginator.Prev.URL }}"
+        aria-label="Previous"
+      >
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    {{ else }}
+    <li class="page-item disabled">
+      <span class="page-link">&laquo;</span>
+    </li>
+    {{ end }} {{ $paginator := .Paginator }} {{ range $index, $page :=
+    $paginator.Pagers }}
+    <li
+      class="page-item{{ if eq $paginator.PageNumber (add $index 1)}} active{{ end }}"
+    >
+      <a class="page-link" href="{{ $page.URL }}">{{ add $index 1 }}</a>
+    </li>
+    {{ end }} {{ if .Paginator.HasNext }}
+    <li class="page-item">
+      <a class="page-link" href="{{ .Paginator.Next.URL }}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+    {{ else }}
+    <li class="page-item disabled">
+      <span class="page-link">&raquo;</span>
+    </li>
+    {{ end }}
+  </ul>
 </nav>
-
 {{ end }}

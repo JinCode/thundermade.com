@@ -1,37 +1,95 @@
 <style>
-    .footer-logo {
-        height: 50px;  /* Set the width */
-        width: auto; /* Keep aspect ratio */
-        border-radius: 8px; /* Round corners */
-    }
+  .footer-logo {
+    height: 50px; /* Set the width */
+    width: auto; /* Keep aspect ratio */
+    border-radius: 8px; /* Round corners */
+  }
+  .btn {
+    height: 40px;
+    background-color: rgba(69, 172, 219, 1);
+    border: none;
+    border-radius: 12px;
+  }
+
+  .info {
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+    align-items: center;
+  }
+  .row {
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .copyright {
+    text-align: center;
+    font-size: 12px;
+    padding: 32px;
+  }
+
+  .line {
+    width: 80vw;
+    height: 1px;
+    background-color: rgba(198, 204, 202, 1);
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 </style>
 
-<footer class="bg-light text-center text-lg-start">
-    <div class="container p-4">
-        <div class="row">
-            <!-- Logo -->
-            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                <img src="/images/logo.png" alt="Thunder Made Logo" class="footer-logo" />
-            </div>
+<footer>
+  <div class="info">
+    <div class="row">
+      <!-- Logo -->
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <img
+          src="/images/logo.png"
+          alt="Thunder Made Logo"
+          class="footer-logo"
+        />
+      </div>
 
-            <!-- Social Icons -->
-            <div class="col-lg-6 col-md-12 mb-4 mb-md-0 d-flex justify-content-lg-end">
-                <a href="https://twitter.com/your_handle" target="_blank" class="btn btn-primary btn-social mx-1">
-                    <i class="fab fa-twitter"></i> <!-- Twitter Icon -->
-                </a>
-                <a href="https://www.linkedin.com/in/your_profile/" target="_blank" class="btn btn-primary btn-social mx-1">
-                    <i class="fab fa-linkedin"></i> <!-- LinkedIn Icon -->
-                </a>
-                <a href="https://www.instagram.com/your_handle/" target="_blank" class="btn btn-primary btn-social mx-1">
-                    <i class="fab fa-instagram"></i> <!-- Instagram Icon -->
-                </a>
-            </div>
-        </div>
+      <!-- Social Icons -->
+      <div
+        class="col-lg-6 col-md-12 mb-4 mb-md-0 d-flex justify-content-lg-end"
+      >
+        <a
+          href="https://twitter.com/your_handle"
+          target="_blank"
+          class="btn btn-primary btn-social mx-1"
+        >
+          <i class="fab fa-twitter"></i>
+          <!-- Twitter Icon -->
+        </a>
+        <a
+          href="https://www.linkedin.com/in/your_profile/"
+          target="_blank"
+          class="btn btn-primary btn-social mx-1"
+        >
+          <i class="fab fa-linkedin"></i>
+          <!-- LinkedIn Icon -->
+        </a>
+        <a
+          href="https://www.instagram.com/your_handle/"
+          target="_blank"
+          class="btn btn-primary btn-social mx-1"
+        >
+          <i class="fab fa-instagram"></i>
+          <!-- Instagram Icon -->
+        </a>
+      </div>
     </div>
-
-    <!-- Text at the bottom -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2023 Your Company. All Rights Reserved.
-    </div>
+  </div>
+  <div class="line"></div>
+  <!-- Text at the bottom -->
+  <div class="copyright">
+    © 2023 ThunderMade Entertainment. All Rights Reserved. ThunderMade.com and
+    the ThunderMade logo are trademarks of ThunderMade Entertainment in the U.S.
+    and/or other countries.
+  </div>
 </footer>
-

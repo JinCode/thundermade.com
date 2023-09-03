@@ -1,61 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="../../assets/css/header.css" />
+    <link rel="stylesheet" href="/css/header.css" />
     <style>
-      .navbar {
+      .navigation {
+        display: flex;
+        justify-content: space-between ;
+        align-items: center;
         background-color: rgba(69, 172, 219, 1);
+        z-index: 0000;
+        padding: 16px 240px 16px 240px;
       }
+
       .navbar-logo {
-        width: 100px;
-        height: auto;
+        height: 50px;
+        width: auto;
         border-radius: 8px;
       }
 
-      .navbar-brand {
-        padding-left: 20px; /* Add padding to the logo */
-      }
-      .navbar-nav {
-        margin-left: auto;
-        margin-right: auto; /* Center the buttons */
-      }
-      .navbar-button {
-        color: rgba(69, 172, 219, 1);
-      }
-      .navbar-selected-button {
-        background-color: #f2f2f2;
+      .search-icon {
+        height: 30px;
+        width: auto;
+        color: #fcfcfc;
       }
 
-      .navbar-logo {
-        height: 50px; /* Set the width */
-        width: auto; /* Keep aspect ratio */
-        border-radius: 8px; /* Round corners */
+      .list {
+        display: flex;
+        align-items: center;
       }
+
+      .list a {
+        color: #fcfcfc;;
+        padding: 0 10px 0 10px;
+        text-decoration: none;
+        font-size: large;
+        font-weight: 500;
+      }
+
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navigation">
       <!-- Logo -->
-      <a class="navbar-brand" href="/">
+      <a class="nav-" href="/">
         <img class="navbar-logo" src="/images/logo.png" alt="Logo" />
       </a>
       <!-- Buttons -->
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/products">Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/blogs">Blogs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contact-us">Contact Us</a>
-          </li>
+      <div class="list">
+            <a class="nav link1" href="/">Home</a>
+            <a class="nav link2" href="/products">Products</a>
+            <a class="nav link3" href="/blogs">Blogs</a>
+            <a class="nav link4" href="/contact-us">Contact Us</a>
         </ul>
       </div>
+      <img class="search-icon" src="/images/searching.png" alt="search">
     </nav>
   </body>
 </html>

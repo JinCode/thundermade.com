@@ -1,60 +1,335 @@
 {{ define "main" }}
 <style>
+  .back-image {
+    background-image: url("/images/controller.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20%;
+  }
 
+  .portion {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 700px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.7240546218487395) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .slogan {
+    background-color: rgba(69, 172, 219, 1);
+    padding: 30px 60px 30px 230px;
+    border-top-right-radius: 200px;
+    border-bottom-right-radius: 200px;
+  }
+
+  .slogan p {
+    font-family: "Impact";
+    line-height: 1.1;
+    font-size: 3.5rem;
+    font-weight: 580;
+    margin: 0;
+  }
+
+  .slogan .awaken {
+    color: #fcfcfc;
+  }
+
+  .slogan .innovation {
+    color: #fed154;
+  }
+
+  .advertise {
+    background-image: url("/images/main.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top,
+  .bottom {
+    height: auto;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.45);
+    border-radius: 20px;
+    padding: 32px;
+    margin: 1.5rem;
+  }
+
+  .top .left img {
+    height: 15vh;
+  }
+
+  .top .right h3,
+  .bottom .right h3 {
+    font-family: "Impact";
+    color: #fed154;
+    font-size: 2rem;
+  }
+
+  .bottom .right {
+    margin-left: 3rem;
+  }
+
+  .top .right p,
+  .bottom .right p {
+    margin-top: 25px;
+    color: #fcfcfcd6;
+    font-size: small;
+  }
+
+  .bottom .left img {
+    height: 30vh;
+  }
+
+  .bottom .right button {
+    background-color: #fed154;
+    border: none;
+    border-radius: 12px;
+    padding: 16px 32px;
+    font-size: medium;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+  }
+
+  .bottom .right button img {
+    margin-left: 10px;
+    height: 14px;
+    text-align: center;
+  }
+
+  .bottom {
+    margin-top: 15rem;
+  }
+
+  .operation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(240, 240, 240, 1);
+  }
+
+  .operation .opt-items {
+    display: flex;
+    width: 80vw;
+  }
+
+  .operation .opt-items .module {
+    width: 437.33px;
+    height: 267px;
+    background-color: rgba(252, 252, 252, 1);
+    box-shadow: 0 10px 12px rgba(228, 228, 228, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    border-radius: 20px;
+    margin: 1rem;
+  }
+
+  .operation h2,
+  .operation h3,
+  .container h2 {
+    font-family: "Impact";
+    font-weight: 500;
+    color: #fcfcfc;
+    -webkit-text-stroke-color: rgba(69, 172, 219, 1);
+  }
+
+  .operation h2,
+  .container h2 {
+    -webkit-text-stroke-width: 3px;
+    font-size: 64px;
+    padding: 32px 0;
+  }
+
+  .operation h2 img,
+  .container h2 img {
+    height: 44px;
+  }
+
+  .operation h3 {
+    -webkit-text-stroke-width: 2px;
+    font-style: italic;
+    font-size: 32px;
+    padding: 20px;
+  }
+
+  .operation h2 strong,
+  .container h2 strong {
+    color: #fed154;
+    -webkit-text-stroke-width: 1px;
+  }
+
+  .operation h3 strong {
+    color: #fed154;
+    -webkit-text-stroke-width: 1px;
+  }
+
+  .operation .module p {
+    text-align: center;
+  }
+
+  .blog-section {
+    width: 100%;
+    background-color: rgba(240, 240, 240, 1);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+  }
+
+  .blog {
+    display: flex;
+    background-color: rgba(252, 252, 252, 1);
+    box-shadow: 0 10px 12px rgba(228, 228, 228, 1);
+    margin: 1.5rem;
+    border-radius: 20px;
+    padding: 32px;
+  }
+
+  .blog img {
+    height: 200px;
+    width: 296px;
+    border-radius: 12px;
+    background-color: rgba(240, 240, 240, 1);
+  }
+
+  .blog .card-title,
+  .blog .readmore {
+    color: rgba(69, 172, 219, 1);
+  }
+
+  .seemore {
+    text-decoration: none;
+    border: 3px solid rgba(69, 172, 219, 1);
+    color: rgba(69, 172, 219, 1);
+    font-weight: 500;
+    border-radius: 12px;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+  }
+
+  .seemore img {
+    height: 16px;
+    margin-left: 10px;
+  }
 </style>
-<div class="container my-5">
-    <!-- Start of the row -->
-    <div class="row">
-        <!-- First column -->
-        <div class="col-md-6">
-            <p>Awaken the inovation within</p>
-        </div>
-        <div class="col-md-6">
-            <p>Some image here</p>
-        </div>
+<div class="main">
+  <!-- Start of the row -->
+  <div class="back-image">
+    <div class="portion one">
+      <!-- First column -->
+      <div class="slogan">
+        <p class="awaken">Awaken the</p>
+        <p class="innovation">Inovation Within</p>
+      </div>
     </div>
-    <div class="row">
+  </div>
+  <div class="advertise">
+    <div class="top">
+      <div class="left">
+        <img src="/images/blog-cover.png" alt="Last Pup Standing" />
+      </div>
+      <div class="right">
+        <h3>Last Pup Standing</h3>
         <p>
-            featured game last pup standing
+          Choose your favorite puppy avatar and challenge up to four other
+          players in this gripping card game, exclusively on the web. Every
+          decision counts, every move is crucial, and only one can be the last
+          pup standing. Will you outwit your opponents and take the crown?
         </p>
+      </div>
     </div>
-    <div class="row">
-        <p>HOW WE OPERATE</p>
-        <div class="col-md-4">
-            <p>Think Fast</p>
-            <p>blah blah blah blah blah</p>
-        </div>
-        <div class="col-md-4">
-            <p>Code Fast</p>
-            <p>blah blah blah blah blah</p>
-        </div>
-        <div class="col-md-4">
-            <p>Fail Fast</p>
-            <p>blah blah blah blah blah</p>
-        </div>
+    <div class="bottom">
+      <div class="left">
+        <img src="/images/Group 1.png" alt="" />
+      </div>
+      <div class="right">
+        <h3>Join the Ultimate Puppy Card Duel!</h3>
+        <p>
+          Dive into a web-based multiplayer showdown where strategy, bluffing
+          and adorable puppy avatarss come together.
+        </p>
+        <button>
+          PLAY NOW <img src="/images/play-button-arrowhead.png" alt="" />
+        </button>
+      </div>
     </div>
+  </div>
+
+  <div class="operation">
+    <h2>
+      <img src="/images/light.png" alt="light" />HOW WE <strong>OPERATE</strong
+      ><img src="/images/light.png" alt="light" />
+    </h2>
+    <div class="opt-items">
+      <div class="module think">
+        <img src="/images/think-fast.png" alt="think" />
+        <h3>Think<strong>Fast</strong></h3>
+        <p>Innovative quickly, adapting to ever-evolving challenges.</p>
+      </div>
+      <div class="module code">
+        <img src="/images/code-fast.png" alt="code" />
+        <h3>Code<strong>Fast</strong></h3>
+        <p>Turn visions into code with prompt execution.</p>
+      </div>
+      <div class="module fail">
+        <img src="/images/fail-fast.png" alt="fail" />
+        <h3>Fail<strong>Fast</strong></h3>
+        <p>Embrace early mistakes to optimize and refine with agility.</p>
+      </div>
+    </div>
+  </div>
+  <div class="blog-section">
     <div class="container">
-        <div class="row">
-            {{ $pages := where .Site.RegularPages "Section" "blogs" }}
-            {{ $featured := where $pages "Params.featured" true }}
-            {{ $topFour := first 4 $featured }}
-<!--            {{ printf "All pages in blogs section: %#v" $pages }}-->
-<!--            {{ printf "Featured blogs: %#v" $featured }}-->
-<!--            {{ printf "Top four featured blogs: %#v" $topFour }}-->
-            {{ range $topFour }}
-            <div class="col-md-6">
-                <div class="card">
-                    <img src="{{ with .Params.image }}{{ . | relURL }}{{ end }}" class="card-img-top" alt="{{ .Title }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ .Title }}</h5>
-                        <p class="card-text">{{ .Params.description }}</p>
-                        <a href="{{ .RelPermalink }}" class="btn btn-primary">Read More</a>
-                    </div>
-                </div>
+      <h2>
+        <img src="/images/light.png" alt="light" />OUR <strong>BLOGS</strong
+        ><img src="/images/light.png" alt="light" />
+      </h2>
+      <div class="row">
+        {{ $pages := where .Site.RegularPages "Section" "blogs" }} {{ $featured
+        := where $pages "Params.featured" true }} {{ $topFour := first 4
+        $featured }}
+        <!--            {{ printf "All pages in blogs section: %#v" $pages }}-->
+        <!--            {{ printf "Featured blogs: %#v" $featured }}-->
+        <!--            {{ printf "Top four featured blogs: %#v" $topFour }}-->
+        {{ range $topFour }}
+        <div class="col-md-6">
+          <div class="blog">
+            <img
+              src="{{ with .Params.image }}{{ . | relURL }}{{ end }}"
+              class="card-img-top"
+              alt="{{ .Title }}"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ .Title }}</h5>
+              <p class="card-text">{{ .Params.description }}</p>
+              <a href="{{ .RelPermalink }}" class="readmore">Read More</a>
             </div>
-            {{ end }}
-            <a type="button" class="btn btn-primary" href="blogs">See more</a>
+          </div>
         </div>
+        {{ end }}
+      </div>
+      <a type="button" class="seemore" href="blogs"
+        >SEE MORE <img src="/images/right-chevron.png" alt=""
+      /></a>
     </div>
+  </div>
 </div>
 {{ end }}
