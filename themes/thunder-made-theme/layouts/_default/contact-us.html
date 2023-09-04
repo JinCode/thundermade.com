@@ -1,39 +1,181 @@
 {{ define "main" }}
 <style>
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(240, 240, 240, 1);
+  }
+  h1 {
+    font-family: "Impact";
+    font-weight: 500;
+    color: #fcfcfc;
+    -webkit-text-stroke-color: rgba(69, 172, 219, 1);
+    -webkit-text-stroke-width: 3px;
+    font-size: 64px;
+    padding-top: 32px;
+    text-align: center;
+  }
 
+  h1 img {
+    height: 44px;
+  }
+
+  h1 strong {
+    color: #fed154;
+    -webkit-text-stroke-width: 1px;
+  }
+
+  .contact-form {
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  form {
+    width: 40vw;
+    padding: 32px;
+    border-radius: 20px;
+    background-color: rgba(252, 252, 252, 1);
+  }
+
+  .name,
+  .email {
+    display: inline-block;
+    width: 17.7vw;
+  }
+
+  .name input,
+  .email input,
+  .message textarea {
+    border: 1px solid rgba(198, 204, 202, 1);
+    background-color: rgba(240, 240, 240, 1);
+  }
+
+  .contact-form .form-image {
+    width: 550px;
+    height: 550px;
+    padding: 32px;
+  }
+
+  label {
+    font-weight: 500;
+    line-height: 21.09px;
+  }
+
+  .message label {
+    padding-top: 16px;
+  }
+
+  .not-robot {
+    padding: 16px;
+    border: 1px solid rgba(30, 35, 41, 1);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+  }
+
+  button {
+    background-color: rgba(244, 179, 1, 1);
+  }
+
+  .form-check-input {
+    margin-right: 10px;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    width: 36vw;
+  }
+
+  button img {
+    margin-left: 5px;
+    width: 10px;
+    height: 10px;
+  }
 </style>
-<div>
-  <h1>Contact us</h1>
+<div class="main">
+  <h1>
+    <img src="/images/light.png" alt="light" />CONTACT <strong>US</strong
+    ><img src="/images/light.png" alt="light" />
+  </h1>
+  <p>
+    Lorem ipsum dolor sit amet consectetur. Ornare at urna pulvinar urna aliquam
+    vitae diam dignissim. Commodo egestas sagittis amet mauris nisi
+  </p>
   <!-- Contact Us Form -->
-  <div class="container">
-    <form action="/submit" method="post">
-      <!-- Name field -->
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" name="name" required>
-      </div>
+  <div class="contact-form">
+    <img class="form-image" src="/images/contact.png" alt="" />
+    <div class="container">
+      <form action="/submit" method="post">
+        <!-- Name field -->
+        <div class="name">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="Enter name"
+            required
+          />
+        </div>
 
-      <!-- Email field -->
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" name="email" required>
-      </div>
+        <!-- Email field -->
+        <div class="email">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Enter email"
+            required
+          />
+        </div>
 
-      <!-- Message textarea -->
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-      </div>
+        <!-- Message textarea -->
+        <div class="message">
+          <label for="message">Message</label>
+          <textarea
+            class="form-control"
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Enter your message"
+            required
+          ></textarea>
+        </div>
 
-      <!-- Not a robot checkbox -->
-      <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="notRobot" required>
-        <label class="form-check-label" for="notRobot">I'm not a robot</label>
-      </div>
+        <!-- Not a robot checkbox -->
+        <div class="not-robot">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="notRobot"
+            required
+          />
+          <label class="form-check-label" for="notRobot">I'm not a robot</label>
+        </div>
 
-      <!-- Submit button -->
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+        <!-- Submit button -->
+        <button type="submit" class="form-submit">
+          SEND
+          <img
+            class="button-img"
+            src="/images/play-button-arrowhead.png"
+            alt="send"
+          />
+        </button>
+      </form>
+    </div>
   </div>
 </div>
 {{ end }}
