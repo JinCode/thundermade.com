@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <title>Blog 10 | Thunder Made LLC</title>
 
-      <link rel="stylesheet" href="/css/main.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU=" crossorigin="anonymous">
+      <link rel="stylesheet" href="/css/main.min.626c8528456649e10d878df19e1142b9f7d21bcd054a4d7d1e96c37567184f3f.css" integrity="sha256-YmyFKEVmSeENh43xnhFCuffSG80FSk19HpbDdWcYTz8=" crossorigin="anonymous">
 
 
       <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
@@ -56,6 +56,9 @@
         font-weight: 500;
       }
 
+      .active {
+        background-color: #ddd;
+      }
     </style>
   </head>
   <body>
@@ -66,11 +69,10 @@
       </a>
       
       <div class="list">
-            <a class="nav link1" href="/">Home</a>
-            <a class="nav link2" href="/products">Products</a>
-            <a class="nav link3" href="/blogs">Blogs</a>
-            <a class="nav link4" href="/contact-us">Contact Us</a>
-        </ul>
+        <a class="nav link1 " href="/">Home</a>
+        <a class="nav link2 " href="/products">Products</a>
+        <a class="nav link3 " href="/blogs">Blogs</a>
+        <a class="nav link4 " href="/contact-us">Contact Us</a>
       </div>
       <img class="search-icon" src="/images/searching.png" alt="search">
     </nav>
@@ -80,10 +82,216 @@
   </header>
   <main>
     
-<h1>Blog 10</h1>
-<div>
-    
+<style>
+  .blog-image {
+    height: 60vh;
+    width: 70vw;
+    background-color: rgba(252, 252, 252, 1);
+    margin: 2rem;
+    border-radius: 20px;
+  }
+
+  .single-blog {
+    background-color: rgba(240, 240, 240, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content {
+    width: 70vw;
+    text-align: center;
+  }
+
+  h1,
+  h2 {
+    font-family: "Impact";
+    font-weight: 500;
+    color: #fcfcfc;
+    -webkit-text-stroke-color: rgba(69, 172, 219, 1);
+    -webkit-text-stroke-width: 3px;
+    font-size: 64px;
+    padding: 32px 0 0 0;
+    text-align: center;
+  }
+
+  h1 img,
+  h2 img {
+    height: 44px;
+  }
+
+  h2 strong {
+    color: #fed154;
+    -webkit-text-stroke-width: 1px;
+  }
+  .blog-section {
+    width: 100%;
+    background-color: rgba(240, 240, 240, 1);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+  }
+
+  .blog {
+    display: flex;
+    background-color: rgba(252, 252, 252, 1);
+    box-shadow: 0 10px 12px rgba(228, 228, 228, 1);
+    margin: 1.5rem;
+    border-radius: 20px;
+    padding: 32px;
+  }
+
+  .blog img {
+    height: 200px;
+    width: 296px;
+    border-radius: 12px;
+    background-color: rgba(240, 240, 240, 1);
+  }
+
+  .blog .card-title,
+  .blog .readmore {
+    color: rgba(69, 172, 219, 1);
+  }
+
+  .seemore {
+    text-decoration: none;
+    border: 3px solid rgba(69, 172, 219, 1);
+    color: rgba(69, 172, 219, 1);
+    font-weight: 500;
+    border-radius: 12px;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+  }
+
+  .seemore img {
+    height: 16px;
+    margin-left: 10px;
+  }
+
+  .tags {
+    height: 30vh;
+  }
+
+  .tags h2 {
+    margin:2rem;
+  }
+
+  .tags a {
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    color: rgba(69, 172, 219, 1);
+    border: 3px solid rgba(69, 172, 219, 1);
+    border-radius: 50px;
+    padding: 16px 32px;
+    margin: 1rem 1rem 2rem 1rem;
+  }
+</style>
+<div class="single-blog">
+  <img class="blog-image" src="/images/blog-cover.png" alt="Blog 10" />
+  <h1>
+    <img src="/images/light.png" alt="light" />Blog 10<img
+      src="/images/light.png"
+      alt="light"
+    />
+  </h1>
+  <p class="date">"Thu, Jul 6, 2023"</p>
+  <div class="content"><p></p></div>
+  <div class="tags">
+    <h2>
+      <img src="/images/light.png" alt="light" />TAGS</strong
+      ><img src="/images/light.png" alt="light" />
+    </h2>
+    <a href="/">Lorem Ipsum</a>
+    <a href="/">Lorem Ipsum</a>
+    <a href="/">Lorem Ipsum</a>
+  </div>
+  <div class="blog-section">
+    <div class="container">
+      <h2>
+        <img src="/images/light.png" alt="light" />SIMILAR <strong>POSTS</strong
+        ><img src="/images/light.png" alt="light" />
+      </h2>
+      <div class="row">
+          
+        
+        
+        
+        
+        <div class="col-md-6">
+          <div class="blog">
+            <img
+              src="/images/blog-cover.png"
+              class="card-img-top"
+              alt="Blog 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Blog 1</h5>
+              <p class="card-text">This is a short description of Blog 1</p>
+              <a href="/blogs/1.architecture-of-card-game/" class="readmore">Read More</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="blog">
+            <img
+              src="/images/blog-cover.png"
+              class="card-img-top"
+              alt="Blog 2"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Blog 2</h5>
+              <p class="card-text">This is a short description of Blog 2</p>
+              <a href="/blogs/2.game-state-architecture/" class="readmore">Read More</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="blog">
+            <img
+              src="/images/blog-cover.png"
+              class="card-img-top"
+              alt="Blog 3"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Blog 3</h5>
+              <p class="card-text">This is a short description of Blog 3</p>
+              <a href="/blogs/3.websocket-design-architecture/" class="readmore">Read More</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="blog">
+            <img
+              src="/images/blog-cover.png"
+              class="card-img-top"
+              alt="Blog 4"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Blog 4</h5>
+              <p class="card-text">This is a short description of Blog 4</p>
+              <a href="/blogs/4.scaling-of-multiplayer-game/" class="readmore">Read More</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <a type="button" class="seemore" href="blogs"
+        >SEE MORE <img src="/images/right-chevron.png" alt=""
+      /></a>
+    </div>
+  </div>
 </div>
+
 
   </main>
   <footer>

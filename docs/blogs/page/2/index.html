@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <title>Blogs | Thunder Made LLC</title>
 
-      <link rel="stylesheet" href="/css/main.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU=" crossorigin="anonymous">
+      <link rel="stylesheet" href="/css/main.min.626c8528456649e10d878df19e1142b9f7d21bcd054a4d7d1e96c37567184f3f.css" integrity="sha256-YmyFKEVmSeENh43xnhFCuffSG80FSk19HpbDdWcYTz8=" crossorigin="anonymous">
 
 
       <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
@@ -56,6 +56,9 @@
         font-weight: 500;
       }
 
+      .active {
+        background-color: #ddd;
+      }
     </style>
   </head>
   <body>
@@ -66,11 +69,10 @@
       </a>
       
       <div class="list">
-            <a class="nav link1" href="/">Home</a>
-            <a class="nav link2" href="/products">Products</a>
-            <a class="nav link3" href="/blogs">Blogs</a>
-            <a class="nav link4" href="/contact-us">Contact Us</a>
-        </ul>
+        <a class="nav link1 " href="/">Home</a>
+        <a class="nav link2 " href="/products">Products</a>
+        <a class="nav link3 active" href="/blogs">Blogs</a>
+        <a class="nav link4 " href="/contact-us">Contact Us</a>
       </div>
       <img class="search-icon" src="/images/searching.png" alt="search">
     </nav>
@@ -81,84 +83,227 @@
   <main>
     
 <style>
-    .blog-list-image {
-        width: 100px;
-        height: auto;
-    }
+  .blog-list-image {
+    height: 38vh;
+    background-color: rgb(252, 252, 252, 1);
+    box-shadow: 0 10px 12px rgba(228, 228, 228, 1);
+    border-radius: 12px;
+  }
+
+  h1 {
+    font-family: "Impact";
+    font-weight: 500;
+    color: #fcfcfc;
+    -webkit-text-stroke-color: rgba(69, 172, 219, 1);
+    -webkit-text-stroke-width: 3px;
+    font-size: 64px;
+    padding: 32px 0;
+    text-align: center;
+  }
+
+  h1 img {
+    height: 44px;
+  }
+
+  h1 strong {
+    color: #fed154;
+    -webkit-text-stroke-width: 1px;
+  }
+  .blog {
+    display: flex;
+    padding: 32px 32px 128px 15vw;
+  }
+
+  .blog,
+  nav,
+  h1 {
+    background-color: rgba(240, 240, 240, 1);
+    margin: 0;
+  }
+
+  .blog .blog-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 3rem;
+  }
+
+  .blog-details .information h2 {
+    color: rgba(69, 172, 219, 1);
+    font-size: 24px;
+    line-height: 28.8px;
+  }
+
+  .blog .information .date,
+  .blog .information .desciption {
+    font-size: 16px;
+    color: rgba(42, 47, 53, 1);
+  }
+
+  .official {
+    border: 3px solid rgba(69, 172, 219, 1);
+    border-radius: 12px;
+    padding: 16px 32px;
+    text-decoration: none;
+    color: rgba(69, 172, 219, 1);
+    margin-right: 1rem;
+    font-weight: 500;
+  }
+
+  .share-blogs {
+    color: rgba(69, 172, 219, 1);
+    margin-left: 1rem;
+    font-weight: 500;
+  }
+
+  .official img {
+    height: 16px;
+    margin-left: 5px;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  li {
+    padding: 10px 10px 75px 10px;
+  }
+
+  .page-item.active .page-link {
+    background-color: rgba(240, 240, 240, 1);
+    color: #fed154;
+    font-style: italic;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: #fed154;
+    border: none;
+  }
+
+  .page-link,
+  .page-item.disabled .page-link {
+    font-size: 24px;
+    position: relative;
+    display: block;
+    color: rgba(69, 172, 219, 1);
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+  }
 </style>
-<h1>Blog Posts</h1>
+<h1>
+  <img src="/images/light.png" alt="light" />BLOG <strong>POSTS</strong
+  ><img src="/images/light.png" alt="light" />
+</h1>
 
-
-
-<div>
-    <h2>Blog 9</h2>
-    <img class="blog-list-image" src="/images/blog-cover.png" alt="Blog 9" />
-    <p>This is a short description of Blog</p>
-    <p>Wed, Jul 5, 2023</p>
-    <a href="/blogs/9.blog/">Read More</a>
+ 
+<div class="blog">
+  <img class="blog-list-image" src="/images/blog-cover.png" alt="Blog 9" />
+  <div class="blog-details">
+    <div class="information">
+      <p class="date">Wed, Jul 5, 2023</p>
+      <h2>Blog 9</h2>
+      <p class="description">This is a short description of Blog</p>
+    </div>
+    <div class="buttons">
+      <a class="official" href="/blogs/9.blog/">READ MORE</a>
+      <a class="share-blogs" href="/">SHARE PAGE</a>
+    </div>
+  </div>
 </div>
 
-<div>
-    <h2>Blog 8</h2>
-    <img class="blog-list-image" src="/images/blog-cover.png" alt="Blog 8" />
-    <p>This is a short description of Blog</p>
-    <p>Tue, Jul 4, 2023</p>
-    <a href="/blogs/8.blog/">Read More</a>
+<div class="blog">
+  <img class="blog-list-image" src="/images/blog-cover.png" alt="Blog 8" />
+  <div class="blog-details">
+    <div class="information">
+      <p class="date">Tue, Jul 4, 2023</p>
+      <h2>Blog 8</h2>
+      <p class="description">This is a short description of Blog</p>
+    </div>
+    <div class="buttons">
+      <a class="official" href="/blogs/8.blog/">READ MORE</a>
+      <a class="share-blogs" href="/">SHARE PAGE</a>
+    </div>
+  </div>
 </div>
 
-<div>
-    <h2>Blog 7</h2>
-    <img class="blog-list-image" src="/images/blog-cover.png" alt="Blog 7" />
-    <p>This is a short description of Blog</p>
-    <p>Mon, Jul 3, 2023</p>
-    <a href="/blogs/7.blog/">Read More</a>
+<div class="blog">
+  <img class="blog-list-image" src="/images/blog-cover.png" alt="Blog 7" />
+  <div class="blog-details">
+    <div class="information">
+      <p class="date">Mon, Jul 3, 2023</p>
+      <h2>Blog 7</h2>
+      <p class="description">This is a short description of Blog</p>
+    </div>
+    <div class="buttons">
+      <a class="official" href="/blogs/7.blog/">READ MORE</a>
+      <a class="share-blogs" href="/">SHARE PAGE</a>
+    </div>
+  </div>
 </div>
 
-<div>
-    <h2>Blog 6</h2>
-    <img class="blog-list-image" src="/images/blog-cover.png" alt="Blog 6" />
-    <p>This is a short description of Blog</p>
-    <p>Sun, Jul 2, 2023</p>
-    <a href="/blogs/6.blog/">Read More</a>
+<div class="blog">
+  <img class="blog-list-image" src="/images/blog-cover.png" alt="Blog 6" />
+  <div class="blog-details">
+    <div class="information">
+      <p class="date">Sun, Jul 2, 2023</p>
+      <h2>Blog 6</h2>
+      <p class="description">This is a short description of Blog</p>
+    </div>
+    <div class="buttons">
+      <a class="official" href="/blogs/6.blog/">READ MORE</a>
+      <a class="share-blogs" href="/">SHARE PAGE</a>
+    </div>
+  </div>
 </div>
 
-<div>
-    <h2>Blog 5</h2>
-    <img class="blog-list-image" src="/images/blog-cover.png" alt="Blog 5" />
-    <p>This is a short description of Blog</p>
-    <p>Sat, Jul 1, 2023</p>
-    <a href="/blogs/5.blog/">Read More</a>
+<div class="blog">
+  <img class="blog-list-image" src="/images/blog-cover.png" alt="Blog 5" />
+  <div class="blog-details">
+    <div class="information">
+      <p class="date">Sat, Jul 1, 2023</p>
+      <h2>Blog 5</h2>
+      <p class="description">This is a short description of Blog</p>
+    </div>
+    <div class="buttons">
+      <a class="official" href="/blogs/5.blog/">READ MORE</a>
+      <a class="share-blogs" href="/">SHARE PAGE</a>
+    </div>
+  </div>
 </div>
 
 
 
 <nav aria-label="Page navigation">
-    <ul class="pagination">
-        
-        <li class="page-item">
-            <a class="page-link" href="/blogs/" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        
-
-        
-        
-        <li class="page-item">
-            <a class="page-link" href="/blogs/">1</a>
-        </li>
-        
-        <li class="page-item active">
-            <a class="page-link" href="/blogs/page/2/">2</a>
-        </li>
-        
-
-        
-        <li class="page-item disabled">
-            <span class="page-link">&raquo;</span>
-        </li>
-        
-    </ul>
+  <ul class="pagination">
+    
+    <li class="page-item">
+      <a
+        class="page-link"
+        href="/blogs/"
+        aria-label="Previous"
+      >
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+      
+    <li
+      class="page-item"
+    >
+      <a class="page-link" href="/blogs/">1</a>
+    </li>
+    
+    <li
+      class="page-item active"
+    >
+      <a class="page-link" href="/blogs/page/2/">2</a>
+    </li>
+     
+    <li class="page-item disabled">
+      <span class="page-link">&raquo;</span>
+    </li>
+    
+  </ul>
 </nav>
 
 
