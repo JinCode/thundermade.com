@@ -36,7 +36,6 @@
         justify-content: space-between;
         align-items: center;
         background-color: rgba(69, 172, 219, 1);
-        z-index: 0000;
         padding: 16px 240px 16px 240px;
       }
 
@@ -70,7 +69,8 @@
         text-decoration: underline;
       }
 
-      .menu-close img {
+      .menu-close,
+      .toggle-bar {
         display: none;
       }
 
@@ -80,7 +80,11 @@
           display: none;
         }
 
-        .menu-close img {
+        .toggle-bar {
+          display: block;
+        }
+
+        .menu-close {
         display: block;
       }
 
@@ -102,6 +106,7 @@
         }
 
         .dropdown-menu {
+          width: 100%;
           padding: 32px;
           background-color: rgb(240,240,240,1);
           display: none;
@@ -110,8 +115,7 @@
           position: absolute;
           top: 82px;
           right: 0;
-          border: none;
-          border-radius: 20px;
+          border: 1px solid rgba(69, 172, 219, 1);
         }
 
         .dropdown-menu.open,
@@ -152,6 +156,12 @@
         }
 
       }
+
+      @media only screen and (min-width: 700px) and (max-width: 1100px) {
+        .navigation {
+        padding: 32px;
+      }
+      }
     </style>
   </head>
   <body>
@@ -174,13 +184,13 @@
         <a class="nav link3 " href="/blogs">BLOGS</a>
         <a class="nav link4 active" href="/contact-us">CONTACT US</a>
       </div>
+      <img class="search-icon" src="/images/searching.png" alt="search">
       <a class="toggle-bar" href="#">
         <img class="hamburger" src="/images/Hamburger.png" alt="menu-icon">
       </a>
       <a class="menu-close" href="#">
         <img class="close-img" src="/images/Close-100.png" alt="menu-icon">
       </a>
-      <img class="search-icon" src="/images/searching.png" alt="search">
     </nav>
     <script>
       const toggleBar = document.querySelector(".toggle-bar");
@@ -206,14 +216,23 @@
   <main>
     
 <style>
+  * {
+    font-family: "PoetsenOne";
+  }
+
   .main {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgba(240, 240, 240, 1);
+    padding-bottom: 3rem;
   }
+
+  p {
+    text-align: center;
+  }
+
   h1 {
-    font-family: "Impact";
     font-weight: 500;
     color: #fcfcfc;
     -webkit-text-stroke-color: rgba(69, 172, 219, 1);
@@ -262,7 +281,7 @@
   .contact-form .form-image {
     width: 550px;
     height: 550px;
-    padding: 32px;
+     
   }
 
   label {
@@ -271,7 +290,7 @@
   }
 
   .message label {
-    padding-top: 16px;
+    margin-top: 1rem;
   }
 
   .not-robot {
@@ -281,10 +300,6 @@
     display: flex;
     align-items: center;
     margin: 2rem 0;
-  }
-
-  button {
-    background-color: rgba(244, 179, 1, 1);
   }
 
   .form-check-input {
@@ -298,13 +313,70 @@
     padding: 12px;
     border-radius: 6px;
     font-weight: 500;
-    width: 36vw;
+    width: 100%;
+    border: 2px solid black;
+    background-color: rgba(244, 179, 1, 1);
   }
 
   button img {
     margin-left: 5px;
     width: 10px;
     height: 10px;
+  }
+
+  .single-line {
+    height: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .email {
+    padding-left: 16px;
+  }
+
+  @media only screen and (max-width: 900px) {
+    h1 {
+      font-size: 32px;
+      -webkit-text-stroke-width: 2px;
+    }
+
+    .contact-form {
+      flex-direction: column;
+    }
+
+    .contact-form .form-image {
+      width: 400px;
+      height: 400px;
+      padding: 32px;
+    }
+
+    .contact-form {
+      width: 90vw;
+      margin-bottom: 3rem;
+    }
+
+    form {
+      width: inherit;
+    }
+
+    .name,
+    .email {
+      width: 100%;
+    }
+
+    .email label {
+      padding-top: 16px;
+    }
+
+    .email {
+      margin-bottom: 0.998rem;
+    }
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 1000px) {
+    .contact-form .form-image {
+      height: 35vh;
+    }
   }
 </style>
 <div class="main">
@@ -322,29 +394,31 @@
     <div class="container">
       <form action="/submit" method="post">
         
-        <div class="name">
-          <label for="name">Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            name="name"
-            placeholder="Enter name"
-            required
-          />
-        </div>
+        <div class="single-line">
+          <div class="name">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              placeholder="Enter name"
+              required
+            />
+          </div>
 
-        
-        <div class="email">
-          <label for="email">Email</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            name="email"
-            placeholder="Enter email"
-            required
-          />
+          
+          <div class="email">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Enter email"
+              required
+            />
+          </div>
         </div>
 
         
