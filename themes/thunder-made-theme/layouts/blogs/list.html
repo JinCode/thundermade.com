@@ -1,5 +1,9 @@
 {{ define "main" }}
 <style>
+  * {
+    font-family: "PoetsenOne";
+  }
+
   .blog-list-image {
     height: 38vh;
     background-color: rgb(252, 252, 252, 1);
@@ -8,7 +12,6 @@
   }
 
   h1 {
-    font-family: "Impact";
     font-weight: 500;
     color: #fcfcfc;
     -webkit-text-stroke-color: rgba(69, 172, 219, 1);
@@ -107,6 +110,83 @@
     background-color: transparent;
     border: none;
   }
+
+  .share-image {
+    display: none;
+  }
+
+  @media only screen and (max-width: 700px) {
+    h1 {
+      -webkit-text-stroke-width: 2px;
+      font-size: 32px;
+    }
+
+    .blog {
+      flex-direction: column;
+      padding: 0 0 5rem 0;
+      align-items: center;
+    }
+
+    .blog-list-image {
+      height: 25vh;
+      width: 90vw;
+    }
+
+    .blog .blog-details {
+      margin: 0;
+      margin-top: 1rem;
+      width: 90vw;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-top: 1rem;
+    }
+
+    .official {
+      padding: 16px 96px;
+    }
+
+    .share-blogs {
+      display: none;
+    }
+
+    .share-image {
+      display: inline;
+    }
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 1400px) {
+    .blog {
+      flex-direction: column;
+      padding: 0 0 5rem 0;
+      align-items: center;
+    }
+
+    .blog-list-image {
+      height: 35vh;
+      width: 90vw;
+    }
+
+    .blog .blog-details {
+      margin: 0;
+      margin-top: 1rem;
+      width: 90vw;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-top: 1rem;
+    }
+
+    .official {
+      padding: 16px 80px;
+    }
+  }
 </style>
 <h1>
   <img src="/images/light.png" alt="light" />BLOG <strong>POSTS</strong
@@ -126,6 +206,9 @@ $paginator.Pages }}
     <div class="buttons">
       <a class="official" href="{{ .RelPermalink }}">READ MORE</a>
       <a class="share-blogs" href="/">SHARE PAGE</a>
+      <a class="share-image" href=""
+        ><img src="/images/share.png" alt="share"
+      /></a>
     </div>
   </div>
 </div>

@@ -1,5 +1,10 @@
 {{ define "main" }}
 <style>
+
+  * {
+    font-family: "PoetsenOne";
+  }
+
   .blog-image {
     height: 60vh;
     width: 70vw;
@@ -22,7 +27,6 @@
 
   h1,
   h2 {
-    font-family: "Impact";
     font-weight: 500;
     color: #fcfcfc;
     -webkit-text-stroke-color: rgba(69, 172, 219, 1);
@@ -109,6 +113,71 @@
     padding: 16px 32px;
     margin: 1rem 1rem 2rem 1rem;
   }
+
+  @media only screen and (max-width: 700px) {
+    .blog-image {
+      width: 90vw;
+      height: 25vh;
+    }
+
+    .content {
+      width: 90vw;
+      text-align: center;
+      overflow: scroll;
+    }
+
+    h1,
+    h2 {
+      -webkit-text-stroke-width: 2px;
+      font-size: 32px;
+      padding: 32px 0 0 0;
+    }
+
+    .tags {
+      height: auto;
+    }
+
+    .tags-number {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tags a {
+      margin: 5px;
+    }
+
+    .row .blog {
+      flex-direction: column;
+    }
+
+    .blog .card-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 1100px) {
+    .content {
+      width: 90vw;
+      text-align: center;
+    }
+
+    .blog-image {
+      width: 90vw;
+      height: 40vh;
+    }
+
+    .blog img {
+      width: 30vw;
+    }
+
+    .blog {
+      flex-direction: column;
+      align-items: center;
+      padding: 16px;
+    }
+  }
 </style>
 <div class="single-blog">
   <img class="blog-image" src="{{ .Params.image }}" alt="{{ .Title }}" />
@@ -125,9 +194,11 @@
       <img src="/images/light.png" alt="light" />TAGS</strong
       ><img src="/images/light.png" alt="light" />
     </h2>
-    <a href="/">Lorem Ipsum</a>
-    <a href="/">Lorem Ipsum</a>
-    <a href="/">Lorem Ipsum</a>
+    <div class="tags-number">
+      <a href="/">Lorem Ipsum</a>
+      <a href="/">Lorem Ipsum</a>
+      <a href="/">Lorem Ipsum</a>
+    </div>
   </div>
   <div class="blog-section">
     <div class="container">

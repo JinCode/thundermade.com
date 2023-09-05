@@ -17,7 +17,6 @@
         justify-content: space-between;
         align-items: center;
         background-color: rgba(69, 172, 219, 1);
-        z-index: 0000;
         padding: 16px 240px 16px 240px;
       }
 
@@ -51,7 +50,8 @@
         text-decoration: underline;
       }
 
-      .menu-close img {
+      .menu-close,
+      .toggle-bar {
         display: none;
       }
 
@@ -61,7 +61,11 @@
           display: none;
         }
 
-        .menu-close img {
+        .toggle-bar {
+          display: block;
+        }
+
+        .menu-close {
         display: block;
       }
 
@@ -83,6 +87,7 @@
         }
 
         .dropdown-menu {
+          width: 100%;
           padding: 32px;
           background-color: rgb(240,240,240,1);
           display: none;
@@ -91,8 +96,7 @@
           position: absolute;
           top: 82px;
           right: 0;
-          border: none;
-          border-radius: 20px;
+          border: 1px solid rgba(69, 172, 219, 1);
         }
 
         .dropdown-menu.open,
@@ -133,6 +137,12 @@
         }
 
       }
+
+      @media only screen and (min-width: 700px) and (max-width: 1100px) {
+        .navigation {
+        padding: 32px;
+      }
+      }
     </style>
   </head>
   <body>
@@ -155,13 +165,13 @@
         <a class="nav link3 {{ if eq .RelPermalink "/blogs/" }}active{{ end }}" href="/blogs">BLOGS</a>
         <a class="nav link4 {{ if eq .RelPermalink "/contact-us/" }}active{{ end }}" href="/contact-us">CONTACT US</a>
       </div>
+      <img class="search-icon" src="/images/searching.png" alt="search">
       <a class="toggle-bar" href="#">
         <img class="hamburger" src="/images/Hamburger.png" alt="menu-icon">
       </a>
       <a class="menu-close" href="#">
         <img class="close-img" src="/images/Close-100.png" alt="menu-icon">
       </a>
-      <img class="search-icon" src="/images/searching.png" alt="search">
     </nav>
     <script>
       const toggleBar = document.querySelector(".toggle-bar");

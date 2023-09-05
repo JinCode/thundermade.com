@@ -1,7 +1,10 @@
 {{ define "main" }}
 <style>
+  * {
+    font-family: "PoetsenOne";
+  }
+
   h1 {
-    font-family: "Impact";
     font-weight: 500;
     color: #fcfcfc;
     -webkit-text-stroke-color: rgba(69, 172, 219, 1);
@@ -77,6 +80,10 @@
     margin-left: 5px;
   }
 
+  .share-image {
+    display: none;
+  }
+
   nav ul {
     display: flex;
     justify-content: center;
@@ -106,6 +113,89 @@
     background-color: transparent;
     border: none;
   }
+
+  @media only screen and (max-width: 700px) {
+    h1 {
+      -webkit-text-stroke-width: 2px;
+      font-size: 32px;
+    }
+
+    .products {
+      flex-direction: column;
+    }
+
+    .products .products-list-image {
+      height: 25vh;
+      width: 90vw;
+    }
+
+    .product-details {
+      margin-top: 1rem;
+      margin-left: 0;
+      width: 90vw;
+    }
+
+    .products {
+      padding: 0 0 5rem 0;
+      align-items: center;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-top: 1rem;
+    }
+
+    .official {
+      padding: 16px 80px;
+    }
+
+    .share-blogs {
+      display: none;
+    }
+
+    .share-image {
+      display: inline;
+    }
+
+    .buttons .share-products {
+      display: none;
+    }
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 1480px) {
+    .products {
+      flex-direction: column;
+    }
+
+    .products .products-list-image {
+      height: 35vh;
+      width: 90vw;
+    }
+
+    .product-details {
+      margin-top: 1rem;
+      margin-left: 0;
+      width: 90vw;
+    }
+
+    .products {
+      padding: 0 0 5rem 0;
+      align-items: center;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-top: 1rem;
+    }
+
+    .official {
+      padding: 16px 80px;
+    }
+  }
 </style>
 <h1>
   <img src="/images/light.png" alt="light" />OUR <strong>PRODUCTS</strong
@@ -132,6 +222,10 @@ $paginator.Pages }}
     <div class="buttons">
       <a class="official" href="{{ .Params.link }}">OFFICIAL WEBSITE</a>
       <a class="share-products" href="/">SHARE PRODUCT</a>
+      <a class="share-image" href=""
+        ><img src="/images/share.png" alt="share"
+      /></a>
+      <img src="" alt="" />
     </div>
   </div>
 </div>
