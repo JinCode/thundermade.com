@@ -5,6 +5,15 @@
     font-family: "PoetsenOne";
   }
 
+  a:hover,
+  .card-body .a:hover {
+    color: #fed154;
+  }
+
+  .card-body .a {
+    color: rgba(69, 172, 219, 1);
+  }
+
   .blog-image {
     height: 60vh;
     width: 70vw;
@@ -224,7 +233,7 @@
             <div class="card-body">
               <h5 class="card-title">{{ .Title }}</h5>
               <p class="card-text">{{ .Params.description }}</p>
-              <a href="{{ .RelPermalink }}" class="readmore">Read More</a>
+              <a class="a" href="{{ .RelPermalink }}" class="readmore">Read More</a>
             </div>
           </div>
         </div>

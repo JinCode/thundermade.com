@@ -4,6 +4,15 @@
     font-family: "PoetsenOne";
   }
 
+  a:hover,
+  .card-body .a:hover {
+    color: #fed154;
+  }
+
+  .card-body .a {
+    color: rgba(69, 172, 219, 1);
+  }
+
   .back-image {
     background-image: url("/images/controller.png");
     background-repeat: no-repeat;
@@ -97,7 +106,7 @@
     border-radius: 12px;
     padding: 16px 32px;
     font-size: medium;
-    font-weight: 600;
+    font-weight: 500;
     display: flex;
     align-items: center;
   }
@@ -433,7 +442,9 @@
             <div class="card-body">
               <h5 class="card-title">{{ .Title }}</h5>
               <p class="card-text">{{ .Params.description }}</p>
-              <a href="{{ .RelPermalink }}" class="readmore">Read More</a>
+              <a class="a" href="{{ .RelPermalink }}" class="readmore"
+                >Read More</a
+              >
             </div>
           </div>
         </div>
