@@ -216,10 +216,7 @@
   <main>
     
 <style>
-
-  * {
-    font-family: "PoetsenOne";
-  }
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
 
   a:hover,
   .card-body .a:hover {
@@ -252,6 +249,7 @@
 
   h1,
   h2 {
+    font-family: "Impact";
     font-weight: 500;
     color: #fcfcfc;
     -webkit-text-stroke-color: rgba(69, 172, 219, 1);
@@ -270,9 +268,15 @@
     color: #fed154;
     -webkit-text-stroke-width: 1px;
   }
+
   .blog-section {
     width: 100%;
     background-color: rgba(240, 240, 240, 1);
+  }
+
+  .content p,
+  .single-blog .date {
+    font-family: "Roboto";
   }
 
   .container {
@@ -291,6 +295,12 @@
     padding: 32px;
   }
 
+  .blog .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   .blog img {
     height: 200px;
     width: 296px;
@@ -299,11 +309,17 @@
   }
 
   .blog .card-title,
-  .blog .readmore {
+  .blog .a {
+    font-family: "PoetsenOne";
     color: rgba(69, 172, 219, 1);
   }
 
+  .blog .card-text {
+    font-family: "Roboto";
+  }
+
   .seemore {
+    font-family: "Roboto";
     text-decoration: none;
     border: 3px solid rgba(69, 172, 219, 1);
     color: rgba(69, 172, 219, 1);
@@ -315,11 +331,6 @@
     margin: 1rem;
   }
 
-  .seemore img {
-    height: 16px;
-    margin-left: 10px;
-  }
-
   .tags {
     height: 30vh;
   }
@@ -329,6 +340,7 @@
   }
 
   .tags a {
+    font-family: "Roboto";
     font-weight: 500;
     text-align: center;
     text-decoration: none;
@@ -373,6 +385,9 @@
 
     .row .blog {
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 2rem 0;
     }
 
     .blog .card-body {
@@ -500,8 +515,18 @@
         
       </div>
       <a type="button" class="seemore" href="blogs"
-        >SEE MORE <img src="/images/right-chevron.png" alt=""
-      /></a>
+        >SEE MORE <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-caret-right-fill"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+        /></svg
+    ></a>
     </div>
   </div>
 </div>

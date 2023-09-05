@@ -216,15 +216,14 @@
   <main>
     
 <style>
-  * {
-    font-family: "PoetsenOne";
-  }
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap");
 
   a:hover {
     color: #fed154;
   }
 
   h1 {
+    font-family: "Impact";
     font-weight: 500;
     color: #fcfcfc;
     -webkit-text-stroke-color: rgba(69, 172, 219, 1);
@@ -250,23 +249,26 @@
     margin: 0;
   }
 
-  .products .products-list-image {
-    height: 38vh;
-    background-color: rgb(252, 252, 252, 1);
-    box-shadow: 0 10px 12px rgba(228, 228, 228, 1);
-    border-radius: 12px;
-  }
-
   .products {
     display: flex;
+    height: 50vh;
     padding: 32px 32px 128px 15vw;
   }
 
   .product-details {
+    height: 35vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-left: 3rem;
+    padding-bottom: 16px;
+  }
+
+  .products .products-list-image {
+    height: 35vh;
+    background-color: rgb(252, 252, 252, 1);
+    box-shadow: 0 10px 12px rgba(228, 228, 228, 1);
+    border-radius: 12px;
   }
 
   .consoles img {
@@ -274,19 +276,33 @@
   }
 
   .product-details h2 {
+    font-family: "PoetsenOne";
     color: rgba(69, 172, 219, 1);
     font-size: 24px;
     line-height: 28.8px;
   }
 
+  .product-details p,
+  .product-details a {
+    font-family: "Roboto";
+  }
+
   .official {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto";
     border: 3px solid rgba(69, 172, 219, 1);
     border-radius: 12px;
     padding: 16px 32px;
+    margin-right: 1rem;
     text-decoration: none;
     color: rgba(69, 172, 219, 1);
-    margin-right: 1rem;
     font-weight: 500;
+  }
+
+  .official svg {
+    margin-left: 5px;
   }
 
   .share-products {
@@ -310,6 +326,7 @@
   }
 
   li {
+    font-family: "PoetsenOne";
     padding: 10px 10px 75px 10px;
   }
 
@@ -346,6 +363,7 @@
 
     .products {
       flex-direction: column;
+      height: 60vh;
     }
 
     .products .products-list-image {
@@ -372,7 +390,7 @@
     }
 
     .official {
-      padding: 16px 80px;
+      padding: 16px 32px;
     }
 
     .share-blogs {
@@ -407,6 +425,7 @@
     .products {
       padding: 0 0 5rem 0;
       align-items: center;
+      height: 70vh;
     }
 
     .buttons {
@@ -443,7 +462,20 @@
       <p>This is a short description of the product.</p>
     </div>
     <div class="buttons">
-      <a class="official" href="https://lastpup.com">OFFICIAL WEBSITE</a>
+      <a class="official" href="https://lastpup.com"
+        >OFFICIAL WEBSITE
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-caret-right-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+          /></svg
+      ></a>
       <a class="share-products" href="/">SHARE PRODUCT</a>
       <a class="share-image" href=""
         ><img src="/images/share.png" alt="share"
@@ -470,7 +502,20 @@
       <p>This is a short description of the product.</p>
     </div>
     <div class="buttons">
-      <a class="official" href="https://lastpup.com">OFFICIAL WEBSITE</a>
+      <a class="official" href="https://lastpup.com"
+        >OFFICIAL WEBSITE
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-caret-right-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+          /></svg
+      ></a>
       <a class="share-products" href="/">SHARE PRODUCT</a>
       <a class="share-image" href=""
         ><img src="/images/share.png" alt="share"
@@ -497,7 +542,20 @@
       <p>This is a short description of the product.</p>
     </div>
     <div class="buttons">
-      <a class="official" href="https://lastpup.com">OFFICIAL WEBSITE</a>
+      <a class="official" href="https://lastpup.com"
+        >OFFICIAL WEBSITE
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-caret-right-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+          /></svg
+      ></a>
       <a class="share-products" href="/">SHARE PRODUCT</a>
       <a class="share-image" href=""
         ><img src="/images/share.png" alt="share"
