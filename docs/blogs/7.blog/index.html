@@ -36,7 +36,6 @@
         justify-content: space-between;
         align-items: center;
         background-color: rgba(69, 172, 219, 1);
-        z-index: 0000;
         padding: 16px 240px 16px 240px;
       }
 
@@ -70,7 +69,8 @@
         text-decoration: underline;
       }
 
-      .menu-close img {
+      .menu-close,
+      .toggle-bar {
         display: none;
       }
 
@@ -80,7 +80,11 @@
           display: none;
         }
 
-        .menu-close img {
+        .toggle-bar {
+          display: block;
+        }
+
+        .menu-close {
         display: block;
       }
 
@@ -102,6 +106,7 @@
         }
 
         .dropdown-menu {
+          width: 100%;
           padding: 32px;
           background-color: rgb(240,240,240,1);
           display: none;
@@ -110,8 +115,7 @@
           position: absolute;
           top: 82px;
           right: 0;
-          border: none;
-          border-radius: 20px;
+          border: 1px solid rgba(69, 172, 219, 1);
         }
 
         .dropdown-menu.open,
@@ -152,6 +156,12 @@
         }
 
       }
+
+      @media only screen and (min-width: 700px) and (max-width: 1100px) {
+        .navigation {
+        padding: 32px;
+      }
+      }
     </style>
   </head>
   <body>
@@ -174,13 +184,13 @@
         <a class="nav link3 " href="/blogs">BLOGS</a>
         <a class="nav link4 " href="/contact-us">CONTACT US</a>
       </div>
+      <img class="search-icon" src="/images/searching.png" alt="search">
       <a class="toggle-bar" href="#">
         <img class="hamburger" src="/images/Hamburger.png" alt="menu-icon">
       </a>
       <a class="menu-close" href="#">
         <img class="close-img" src="/images/Close-100.png" alt="menu-icon">
       </a>
-      <img class="search-icon" src="/images/searching.png" alt="search">
     </nav>
     <script>
       const toggleBar = document.querySelector(".toggle-bar");
@@ -206,6 +216,20 @@
   <main>
     
 <style>
+
+  * {
+    font-family: "PoetsenOne";
+  }
+
+  a:hover,
+  .card-body .a:hover {
+    color: #fed154;
+  }
+
+  .card-body .a {
+    color: rgba(69, 172, 219, 1);
+  }
+
   .blog-image {
     height: 60vh;
     width: 70vw;
@@ -228,7 +252,6 @@
 
   h1,
   h2 {
-    font-family: "Impact";
     font-weight: 500;
     color: #fcfcfc;
     -webkit-text-stroke-color: rgba(69, 172, 219, 1);
@@ -315,6 +338,71 @@
     padding: 16px 32px;
     margin: 1rem 1rem 2rem 1rem;
   }
+
+  @media only screen and (max-width: 700px) {
+    .blog-image {
+      width: 90vw;
+      height: 25vh;
+    }
+
+    .content {
+      width: 90vw;
+      text-align: center;
+      overflow: scroll;
+    }
+
+    h1,
+    h2 {
+      -webkit-text-stroke-width: 2px;
+      font-size: 32px;
+      padding: 32px 0 0 0;
+    }
+
+    .tags {
+      height: auto;
+    }
+
+    .tags-number {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tags a {
+      margin: 5px;
+    }
+
+    .row .blog {
+      flex-direction: column;
+    }
+
+    .blog .card-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 1100px) {
+    .content {
+      width: 90vw;
+      text-align: center;
+    }
+
+    .blog-image {
+      width: 90vw;
+      height: 40vh;
+    }
+
+    .blog img {
+      width: 30vw;
+    }
+
+    .blog {
+      flex-direction: column;
+      align-items: center;
+      padding: 16px;
+    }
+  }
 </style>
 <div class="single-blog">
   <img class="blog-image" src="/images/blog-cover.png" alt="Blog 7" />
@@ -331,9 +419,11 @@
       <img src="/images/light.png" alt="light" />TAGS</strong
       ><img src="/images/light.png" alt="light" />
     </h2>
-    <a href="/">Lorem Ipsum</a>
-    <a href="/">Lorem Ipsum</a>
-    <a href="/">Lorem Ipsum</a>
+    <div class="tags-number">
+      <a href="/">Lorem Ipsum</a>
+      <a href="/">Lorem Ipsum</a>
+      <a href="/">Lorem Ipsum</a>
+    </div>
   </div>
   <div class="blog-section">
     <div class="container">
@@ -357,7 +447,7 @@
             <div class="card-body">
               <h5 class="card-title">Blog 1</h5>
               <p class="card-text">This is a short description of Blog 1</p>
-              <a href="/blogs/1.architecture-of-card-game/" class="readmore">Read More</a>
+              <a class="a" href="/blogs/1.architecture-of-card-game/" class="readmore">Read More</a>
             </div>
           </div>
         </div>
@@ -372,7 +462,7 @@
             <div class="card-body">
               <h5 class="card-title">Blog 2</h5>
               <p class="card-text">This is a short description of Blog 2</p>
-              <a href="/blogs/2.game-state-architecture/" class="readmore">Read More</a>
+              <a class="a" href="/blogs/2.game-state-architecture/" class="readmore">Read More</a>
             </div>
           </div>
         </div>
@@ -387,7 +477,7 @@
             <div class="card-body">
               <h5 class="card-title">Blog 3</h5>
               <p class="card-text">This is a short description of Blog 3</p>
-              <a href="/blogs/3.websocket-design-architecture/" class="readmore">Read More</a>
+              <a class="a" href="/blogs/3.websocket-design-architecture/" class="readmore">Read More</a>
             </div>
           </div>
         </div>
@@ -402,7 +492,7 @@
             <div class="card-body">
               <h5 class="card-title">Blog 4</h5>
               <p class="card-text">This is a short description of Blog 4</p>
-              <a href="/blogs/4.scaling-of-multiplayer-game/" class="readmore">Read More</a>
+              <a class="a" href="/blogs/4.scaling-of-multiplayer-game/" class="readmore">Read More</a>
             </div>
           </div>
         </div>

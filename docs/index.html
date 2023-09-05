@@ -37,7 +37,6 @@
         justify-content: space-between;
         align-items: center;
         background-color: rgba(69, 172, 219, 1);
-        z-index: 0000;
         padding: 16px 240px 16px 240px;
       }
 
@@ -71,7 +70,8 @@
         text-decoration: underline;
       }
 
-      .menu-close img {
+      .menu-close,
+      .toggle-bar {
         display: none;
       }
 
@@ -81,7 +81,11 @@
           display: none;
         }
 
-        .menu-close img {
+        .toggle-bar {
+          display: block;
+        }
+
+        .menu-close {
         display: block;
       }
 
@@ -103,6 +107,7 @@
         }
 
         .dropdown-menu {
+          width: 100%;
           padding: 32px;
           background-color: rgb(240,240,240,1);
           display: none;
@@ -111,8 +116,7 @@
           position: absolute;
           top: 82px;
           right: 0;
-          border: none;
-          border-radius: 20px;
+          border: 1px solid rgba(69, 172, 219, 1);
         }
 
         .dropdown-menu.open,
@@ -153,6 +157,12 @@
         }
 
       }
+
+      @media only screen and (min-width: 700px) and (max-width: 1100px) {
+        .navigation {
+        padding: 32px;
+      }
+      }
     </style>
   </head>
   <body>
@@ -175,13 +185,13 @@
         <a class="nav link3 " href="/blogs">BLOGS</a>
         <a class="nav link4 " href="/contact-us">CONTACT US</a>
       </div>
+      <img class="search-icon" src="/images/searching.png" alt="search">
       <a class="toggle-bar" href="#">
         <img class="hamburger" src="/images/Hamburger.png" alt="menu-icon">
       </a>
       <a class="menu-close" href="#">
         <img class="close-img" src="/images/Close-100.png" alt="menu-icon">
       </a>
-      <img class="search-icon" src="/images/searching.png" alt="search">
     </nav>
     <script>
       const toggleBar = document.querySelector(".toggle-bar");
@@ -207,6 +217,19 @@
   <main>
     
 <style>
+  * {
+    font-family: "PoetsenOne";
+  }
+
+  a:hover,
+  .card-body .a:hover {
+    color: #fed154;
+  }
+
+  .card-body .a {
+    color: rgba(69, 172, 219, 1);
+  }
+
   .back-image {
     background-image: url("/images/controller.png");
     background-repeat: no-repeat;
@@ -234,7 +257,6 @@
   }
 
   .slogan p {
-    font-family: "Impact";
     line-height: 1.1;
     font-size: 3.5rem;
     font-weight: 580;
@@ -276,7 +298,6 @@
 
   .top .right h3,
   .bottom .right h3 {
-    font-family: "Impact";
     color: #fed154;
     font-size: 2rem;
   }
@@ -302,7 +323,7 @@
     border-radius: 12px;
     padding: 16px 32px;
     font-size: medium;
-    font-weight: 600;
+    font-weight: 500;
     display: flex;
     align-items: center;
   }
@@ -347,7 +368,6 @@
   .operation h2,
   .operation h3,
   .container h2 {
-    font-family: "Impact";
     font-weight: 500;
     color: #fcfcfc;
     -webkit-text-stroke-color: rgba(69, 172, 219, 1);
@@ -357,7 +377,7 @@
   .container h2 {
     -webkit-text-stroke-width: 3px;
     font-size: 64px;
-    padding: 32px 0;
+    padding: 32px 0 0 0;
   }
 
   .operation h2 img,
@@ -429,7 +449,7 @@
     padding: 16px 32px;
     display: flex;
     align-items: center;
-    margin: 1rem;
+    margin: 1rem 1rem 3rem 1rem;
   }
 
   .seemore img {
@@ -437,8 +457,116 @@
     margin-left: 10px;
   }
 
-  .module.think p {
-    font-family: 'PoetsenOne';
+  @media only screen and (max-width: 700px) {
+    .portion {
+      height: 50vh;
+    }
+
+    .slogan {
+      padding: 16px 32px 16px 50px;
+    }
+
+    .slogan p {
+      font-size: 2rem;
+    }
+
+    .top,
+    .bottom {
+      flex-direction: column;
+    }
+
+    .top .right h3,
+    .bottom .right h3 {
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .top .right p,
+    .bottom .right p {
+      text-align: center;
+    }
+
+    .bottom .left img {
+      height: 15vh;
+    }
+
+    .bottom .right {
+      margin-left: 0rem;
+    }
+
+    .bottom .right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .advertise {
+      background-position: 100%;
+    }
+
+    .operation h2,
+    .container h2 {
+      -webkit-text-stroke-width: 2px;
+      font-size: 32px;
+    }
+
+    .operation .opt-items {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .operation .opt-items .module {
+      width: 70vw;
+    }
+
+    .row .blog {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .blog .card-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 1300px) {
+    .slogan {
+      padding: 32px 64px 32px 100px;
+    }
+
+    .slogan p {
+      font-size: 2.5rem;
+    }
+
+    .bottom .left img {
+      height: 10vh;
+    }
+
+    .operation .opt-items {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .operation .opt-items .module {
+      width: 40vw;
+    }
+
+    .blog-image {
+      width: 90vw;
+      height: 40vh;
+    }
+
+    .blog img {
+      width: 30vw;
+    }
+
+    .blog {
+      flex-direction: column;
+      align-items: center;
+      padding: 16px;
+    }
   }
 </style>
 <div class="main">
@@ -529,7 +657,9 @@
             <div class="card-body">
               <h5 class="card-title">Blog 1</h5>
               <p class="card-text">This is a short description of Blog 1</p>
-              <a href="/blogs/1.architecture-of-card-game/" class="readmore">Read More</a>
+              <a class="a" href="/blogs/1.architecture-of-card-game/" class="readmore"
+                >Read More</a
+              >
             </div>
           </div>
         </div>
@@ -544,7 +674,9 @@
             <div class="card-body">
               <h5 class="card-title">Blog 2</h5>
               <p class="card-text">This is a short description of Blog 2</p>
-              <a href="/blogs/2.game-state-architecture/" class="readmore">Read More</a>
+              <a class="a" href="/blogs/2.game-state-architecture/" class="readmore"
+                >Read More</a
+              >
             </div>
           </div>
         </div>
@@ -559,7 +691,9 @@
             <div class="card-body">
               <h5 class="card-title">Blog 3</h5>
               <p class="card-text">This is a short description of Blog 3</p>
-              <a href="/blogs/3.websocket-design-architecture/" class="readmore">Read More</a>
+              <a class="a" href="/blogs/3.websocket-design-architecture/" class="readmore"
+                >Read More</a
+              >
             </div>
           </div>
         </div>
@@ -574,7 +708,9 @@
             <div class="card-body">
               <h5 class="card-title">Blog 4</h5>
               <p class="card-text">This is a short description of Blog 4</p>
-              <a href="/blogs/4.scaling-of-multiplayer-game/" class="readmore">Read More</a>
+              <a class="a" href="/blogs/4.scaling-of-multiplayer-game/" class="readmore"
+                >Read More</a
+              >
             </div>
           </div>
         </div>
