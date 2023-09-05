@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <title>Blog 9 | Thunder Made LLC</title>
 
-      <link rel="stylesheet" href="/css/main.min.626c8528456649e10d878df19e1142b9f7d21bcd054a4d7d1e96c37567184f3f.css" integrity="sha256-YmyFKEVmSeENh43xnhFCuffSG80FSk19HpbDdWcYTz8=" crossorigin="anonymous">
+      <link rel="stylesheet" href="/css/main.min.177ec985d11b746d9a4218ace8b22835685b69de54e6f2cf97bdae66b6d7533d.css" integrity="sha256-F37JhdEbdG2aQhis6LIoNWhbad5U5vLPl72uZrbXUz0=" crossorigin="anonymous">
 
 
       <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
@@ -22,9 +22,18 @@
   <head>
     <link rel="stylesheet" href="/css/header.css" />
     <style>
+
+      .list a {
+        font-family: "PoetsenOne";
+      }
+
+      .hamburger {
+        display: none;
+      }
+
       .navigation {
         display: flex;
-        justify-content: space-between ;
+        justify-content: space-between;
         align-items: center;
         background-color: rgba(69, 172, 219, 1);
         z-index: 0000;
@@ -52,12 +61,96 @@
         color: #fcfcfc;;
         padding: 0 10px 0 10px;
         text-decoration: none;
-        font-size: large;
+        font-size: 24px;
         font-weight: 500;
       }
 
-      .active {
-        background-color: #ddd;
+      .list a:hover {
+        color: #fed154;
+        text-decoration: underline;
+      }
+
+      .menu-close img {
+        display: none;
+      }
+
+      @media only screen and (max-width: 700px) {
+        .list,
+        .search-icon {
+          display: none;
+        }
+
+        .menu-close img {
+        display: block;
+      }
+
+        .navigation {
+          position: relative;
+          padding: 16px 32px 16px 32px;
+        }
+
+        .hamburger {
+          display: block;
+        }
+
+        .hamburger {
+          height: 48px;
+        }
+
+        .close-img {
+          height: 35px;
+        }
+
+        .dropdown-menu {
+          padding: 32px;
+          background-color: rgb(240,240,240,1);
+          display: none;
+          flex-direction: column;
+          justify-content: center;
+          position: absolute;
+          top: 82px;
+          right: 0;
+          border: none;
+          border-radius: 20px;
+        }
+
+        .dropdown-menu.open,
+        .menu-close.open {
+          display: flex;
+        }
+
+        .menu-close {
+          display: none;
+        }
+
+        .hamburger.open {
+          display: none;
+        }
+
+        .dropdown-menu a {
+          font-family: "PoetsenOne";
+          color: #fcfcfc;
+          padding: 0 10px 0 10px;
+          text-decoration: none;
+          font-size: 30px;
+          font-weight: 500;
+          line-height: 36px;
+          -webkit-text-stroke-color: rgba(69, 172, 219, 1);
+          -webkit-text-stroke-width: 1.5px;
+          padding: 16px;
+        }
+
+        .dropdown-menu a:hover {
+          color: #fed154;
+          text-decoration: underline;
+        }
+
+        .divider {
+          height: 3px;
+          background-color: rgba(69, 172, 219, 1);
+          
+        }
+
       }
     </style>
   </head>
@@ -74,8 +167,38 @@
         <a class="nav link3 " href="/blogs">Blogs</a>
         <a class="nav link4 " href="/contact-us">Contact Us</a>
       </div>
+      <div class="dropdown-menu">
+        <a class="nav link1 " href="/">HOME</a>
+        <div class="divider"></div>
+        <a class="nav link2 " href="/products">PRODUCTS</a>
+        <a class="nav link3 " href="/blogs">BLOGS</a>
+        <a class="nav link4 " href="/contact-us">CONTACT US</a>
+      </div>
+      <a class="toggle-bar" href="#">
+        <img class="hamburger" src="/images/Hamburger.png" alt="menu-icon">
+      </a>
+      <a class="menu-close" href="#">
+        <img class="close-img" src="/images/Close-100.png" alt="menu-icon">
+      </a>
       <img class="search-icon" src="/images/searching.png" alt="search">
     </nav>
+    <script>
+      const toggleBar = document.querySelector(".toggle-bar");
+      const menuClose = document.querySelector(".menu-close");
+      const dropDownMenu = document.querySelector(".dropdown-menu");
+      const closingIcon = document.querySelector(".menu-close");
+      const hamburger = document.querySelector(".hamburger");
+      toggleBar.onclick = function () {
+      dropDownMenu.classList.toggle("open");
+      closingIcon.classList.toggle("open");
+      hamburger.classList.toggle("open");
+      };
+      menuClose.onclick = function () {
+      dropDownMenu.classList.toggle("open");
+      closingIcon.classList.toggle("open");
+      hamburger.classList.toggle("open");
+      };
+    </script>
   </body>
 </html>
 
@@ -314,9 +437,10 @@
     padding: 32px;
     align-items: center;
   }
-  .row {
+  .footer-main {
     width: 80vw;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
@@ -332,18 +456,29 @@
     height: 1px;
     background-color: rgba(198, 204, 202, 1);
   }
+
   footer {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
+  @media only screen and (max-width: 700px) {
+    .footer-main {
+      flex-direction: column;
+    }
+
+    footer img {
+      margin-bottom: 1rem;
+    }
+  }
 </style>
 
 <footer>
   <div class="info">
-    <div class="row">
+    <div class="footer-main">
       
-      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+      <div class="image">
         <img
           src="/images/logo.png"
           alt="Thunder Made Logo"
@@ -352,9 +487,7 @@
       </div>
 
       
-      <div
-        class="col-lg-6 col-md-12 mb-4 mb-md-0 d-flex justify-content-lg-end"
-      >
+      <div class="social-links">
         <a
           href="https://twitter.com/your_handle"
           target="_blank"
