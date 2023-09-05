@@ -1,13 +1,22 @@
 {{ define "main" }}
 <style>
+  * {
+    font-family: "PoetsenOne";
+  }
+
   .main {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgba(240, 240, 240, 1);
+    padding-bottom: 3rem;
   }
+
+  p {
+    text-align: center;
+  }
+
   h1 {
-    font-family: "Impact";
     font-weight: 500;
     color: #fcfcfc;
     -webkit-text-stroke-color: rgba(69, 172, 219, 1);
@@ -56,7 +65,7 @@
   .contact-form .form-image {
     width: 550px;
     height: 550px;
-    padding: 32px;
+    /* padding: 32px; */
   }
 
   label {
@@ -65,7 +74,7 @@
   }
 
   .message label {
-    padding-top: 16px;
+    margin-top: 1rem;
   }
 
   .not-robot {
@@ -75,10 +84,6 @@
     display: flex;
     align-items: center;
     margin: 2rem 0;
-  }
-
-  button {
-    background-color: rgba(244, 179, 1, 1);
   }
 
   .form-check-input {
@@ -92,13 +97,70 @@
     padding: 12px;
     border-radius: 6px;
     font-weight: 500;
-    width: 36vw;
+    width: 100%;
+    border: 2px solid black;
+    background-color: rgba(244, 179, 1, 1);
   }
 
   button img {
     margin-left: 5px;
     width: 10px;
     height: 10px;
+  }
+
+  .single-line {
+    height: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .email {
+    padding-left: 16px;
+  }
+
+  @media only screen and (max-width: 900px) {
+    h1 {
+      font-size: 32px;
+      -webkit-text-stroke-width: 2px;
+    }
+
+    .contact-form {
+      flex-direction: column;
+    }
+
+    .contact-form .form-image {
+      width: 400px;
+      height: 400px;
+      padding: 32px;
+    }
+
+    .contact-form {
+      width: 90vw;
+      margin-bottom: 3rem;
+    }
+
+    form {
+      width: inherit;
+    }
+
+    .name,
+    .email {
+      width: 100%;
+    }
+
+    .email label {
+      padding-top: 16px;
+    }
+
+    .email {
+      margin-bottom: 0.998rem;
+    }
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 1000px) {
+    .contact-form .form-image {
+      height: 35vh;
+    }
   }
 </style>
 <div class="main">
@@ -116,29 +178,31 @@
     <div class="container">
       <form action="/submit" method="post">
         <!-- Name field -->
-        <div class="name">
-          <label for="name">Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            name="name"
-            placeholder="Enter name"
-            required
-          />
-        </div>
+        <div class="single-line">
+          <div class="name">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              placeholder="Enter name"
+              required
+            />
+          </div>
 
-        <!-- Email field -->
-        <div class="email">
-          <label for="email">Email</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            name="email"
-            placeholder="Enter email"
-            required
-          />
+          <!-- Email field -->
+          <div class="email">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Enter email"
+              required
+            />
+          </div>
         </div>
 
         <!-- Message textarea -->
