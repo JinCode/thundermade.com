@@ -69,7 +69,7 @@
     display: flex;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(6px);
     border-radius: 20px;
     padding: 32px;
     margin: 1.5rem;
@@ -133,6 +133,8 @@
 
   .operation .opt-items {
     display: flex;
+    align-items: center;
+    justify-content: center;
     width: 80vw;
   }
 
@@ -315,6 +317,7 @@
 
     .row .blog {
       flex-direction: column;
+      padding: 16px 0 5rem 0;
       align-items: center;
     }
 
@@ -364,6 +367,22 @@
       flex-direction: column;
       align-items: center;
       padding: 16px;
+    }
+  }
+
+  @media only screen and (min-width: 2000px) and (min-height: 1100px) {
+    .top .right p,
+    .bottom .right p {
+      font-size: 28px;
+    }
+
+    .bottom .left img {
+      height: 20vh;
+    }
+
+    .top .right h3,
+    .bottom .right h3 {
+      font-size: 3rem;
     }
   }
 </style>
