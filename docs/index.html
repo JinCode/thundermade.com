@@ -217,9 +217,7 @@
   <main>
     
 <style>
-  * {
-    font-family: "PoetsenOne";
-  }
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap");
 
   a:hover,
   .card-body .a:hover {
@@ -257,6 +255,7 @@
   }
 
   .slogan p {
+    font-family: "Impact";
     line-height: 1.1;
     font-size: 3.5rem;
     font-weight: 580;
@@ -272,7 +271,7 @@
   }
 
   .advertise {
-    background-image: url("/images/main.jpg");
+    background-image: url("/images/gameplay.png");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -287,6 +286,7 @@
     display: flex;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(5px);
     border-radius: 20px;
     padding: 32px;
     margin: 1.5rem;
@@ -298,6 +298,7 @@
 
   .top .right h3,
   .bottom .right h3 {
+    font-family: "Impact";
     color: #fed154;
     font-size: 2rem;
   }
@@ -308,6 +309,7 @@
 
   .top .right p,
   .bottom .right p {
+    font-family: "Roboto";
     margin-top: 25px;
     color: #fcfcfcd6;
     font-size: small;
@@ -368,6 +370,7 @@
   .operation h2,
   .operation h3,
   .container h2 {
+    font-family: "Impact";
     font-weight: 500;
     color: #fcfcfc;
     -webkit-text-stroke-color: rgba(69, 172, 219, 1);
@@ -404,6 +407,7 @@
   }
 
   .operation .module p {
+    font-family: "Roboto";
     text-align: center;
   }
 
@@ -435,8 +439,15 @@
     background-color: rgba(240, 240, 240, 1);
   }
 
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   .blog .card-title,
-  .blog .readmore {
+  .blog .a {
+    font-family: "PoetsenOne";
     color: rgba(69, 172, 219, 1);
   }
 
@@ -501,7 +512,7 @@
     }
 
     .advertise {
-      background-position: 100%;
+      background-position: 50%;
     }
 
     .operation h2,
@@ -538,6 +549,10 @@
 
     .slogan p {
       font-size: 2.5rem;
+    }
+
+    .advertise {
+      background-position: 50%;
     }
 
     .bottom .left img {
@@ -657,9 +672,7 @@
             <div class="card-body">
               <h5 class="card-title">Blog 1</h5>
               <p class="card-text">This is a short description of Blog 1</p>
-              <a class="a" href="/blogs/1.architecture-of-card-game/" class="readmore"
-                >Read More</a
-              >
+              <a class="a" href="/blogs/1.architecture-of-card-game/">Read More</a>
             </div>
           </div>
         </div>
@@ -674,9 +687,7 @@
             <div class="card-body">
               <h5 class="card-title">Blog 2</h5>
               <p class="card-text">This is a short description of Blog 2</p>
-              <a class="a" href="/blogs/2.game-state-architecture/" class="readmore"
-                >Read More</a
-              >
+              <a class="a" href="/blogs/2.game-state-architecture/">Read More</a>
             </div>
           </div>
         </div>
@@ -691,9 +702,7 @@
             <div class="card-body">
               <h5 class="card-title">Blog 3</h5>
               <p class="card-text">This is a short description of Blog 3</p>
-              <a class="a" href="/blogs/3.websocket-design-architecture/" class="readmore"
-                >Read More</a
-              >
+              <a class="a" href="/blogs/3.websocket-design-architecture/">Read More</a>
             </div>
           </div>
         </div>
@@ -708,17 +717,26 @@
             <div class="card-body">
               <h5 class="card-title">Blog 4</h5>
               <p class="card-text">This is a short description of Blog 4</p>
-              <a class="a" href="/blogs/4.scaling-of-multiplayer-game/" class="readmore"
-                >Read More</a
-              >
+              <a class="a" href="/blogs/4.scaling-of-multiplayer-game/">Read More</a>
             </div>
           </div>
         </div>
         
       </div>
       <a type="button" class="seemore" href="blogs"
-        >SEE MORE <img src="/images/right-chevron.png" alt=""
-      /></a>
+        >SEE MORE
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-caret-right-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+          /></svg
+      ></a>
     </div>
   </div>
 </div>
